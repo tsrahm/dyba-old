@@ -2,7 +2,6 @@
 import $ from 'jquery';
 import 'styles/main.scss';
 import dybaHeaderFooter from 'components/dyba-header-footer';
-import dybaMain from 'pages/dyba-main';
 import 'components/jquery.hoverflow.min.js';
 
 $(function() {
@@ -17,7 +16,6 @@ $(function() {
     break;
     default:
         dybaHeaderFooter.init();
-        dybaMain.init();
   }
 
   // Fancy console message for developers
