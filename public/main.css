@@ -296,10 +296,9 @@
 }
 
 .dyba-main-content {
-  width: 100%;
-  max-width: 700px;
+  width: 700px;
   margin: 0 auto;
-  padding: 25px 20px;
+  padding: 0 20px 25px 20px;
   font-family: 'Happy Monkey', serif;
   color: black;
 }
@@ -314,7 +313,17 @@
 }
 
 .dyba-main-content h2 {
-  margin-top: 0px;
+  display: block;
+  text-align: center;
+}
+
+.dyba-main-content h3 {
+  display: block;
+  text-align: center;
+}
+
+.dyba-main-content ul {
+  padding-left: 0;
 }
 
 .dyba-main-content li {
@@ -475,7 +484,7 @@ ul {
   }
   .dyba-main-heading {
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
   }
   .dyba-main-heading-row1-image {
     width: 80px;
@@ -493,6 +502,10 @@ ul {
     font-size: 40px;
     line-height: 50px;
     letter-spacing: 3px;
+  }
+  .dyba-main-content {
+    width: 90%;
+    max-width: 500px;
   }
 }
 
