@@ -317,11 +317,6 @@
   text-align: center;
 }
 
-.dyba-main-content h3 {
-  display: block;
-  text-align: center;
-}
-
 .dyba-main-content ul {
   padding-left: 0;
 }
@@ -513,6 +508,27 @@ p.dyba-btn-header {
   .dyba-main-content {
     width: 90%;
     max-width: 500px;
+  }
+  .dyba-schedule.col-xs-12 {
+    padding-left: 30%;
+  }
+  .dyba-schedule h3 {
+    display: block;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .dyba-schedule.col-sm-7 {
+    padding-left: 20%;
+  }
+  .dyba-schedule.col-sm-5 {
+    padding-left: 0;
+    padding-top: 58px;
+  }
+  .dyba-schedule h3 {
+    display: block;
+    text-align: right;
   }
 }
 
