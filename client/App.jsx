@@ -12,7 +12,7 @@ $(function() {
   // This is called a router
   switch (url) {
     case '/pages/':
-        homePage.init();
+        // homePage.init();
     break;
     default:
         dybaHeaderFooter.init();

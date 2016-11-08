@@ -333,6 +333,13 @@ ul {
   padding-left: 170px;
 }
 
+.dyba-main .dyba-calendar-container {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
 .dyba-footer {
   position: relative;
   width: 100%;
