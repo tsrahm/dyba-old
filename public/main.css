@@ -438,6 +438,11 @@ ul {
   margin-bottom: 0;
 }
 
+.dyba-btn-container {
+  max-width: 484px;
+  margin: 0 auto;
+}
+
 .dyba-link-button.btn {
   position: relative;
   display: block;
@@ -448,6 +453,12 @@ ul {
   font-size: 18px;
   color: white;
   background-color: #005214;
+}
+
+.dyba-link-button.btn.inline {
+  display: inline-block;
+  max-width: 200px;
+  margin: 20px;
 }
 
 .dyba-link-button.btn:hover {
