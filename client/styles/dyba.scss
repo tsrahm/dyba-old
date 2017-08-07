@@ -87,6 +87,13 @@
   line-height: 100px;
   font-family: 'nexa', serif;
 }
+.dyba-title.subtitle {
+  text-align: left;
+  top: -35px;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: 'Happy Monkey', serif;
+}
 .dyba-nav-bar {
   position: relative;
   display: block;
@@ -152,7 +159,7 @@
 }
 .dyba-nav-dropdown-menu {
   position: absolute;
-  width: 200px;
+  width: 210px;
   height: auto;
   padding: 0;
   background: #fff;
@@ -291,9 +298,15 @@
   font-size: 18px;
   text-align: left;
 }
+.dyba-section-title {
+  text-decoration: underline;
+}
 .dyba-main-content h2 {
   display: block;
   text-align: center;
+}
+ul {
+  list-style-type: none;
 }
 .dyba-main-content ul {
   padding-left: 0;
@@ -301,8 +314,12 @@
 .dyba-main-content li {
   font-size: 18px;
 }
-ul {
-  list-style-type: none;
+.dyba-main-content .league-info {
+  list-style-type: square;
+  padding-left: 30px;
+}
+.dyba-main-content .league-info li {
+  font-size: 17px;
 }
 .dyba-rosters {
   padding-left: 170px;
@@ -460,6 +477,11 @@ p.dyba-btn-header {
     line-height: 34px;
     font-size: 34px;
   }
+  .dyba-title.subtitle {
+    text-align: center;
+    top: -2px;
+    font-size: 16px;
+  }
   .dyba-main-heading {
     width: 90%;
     max-width: 500px;
@@ -510,6 +532,9 @@ p.dyba-btn-header {
   .dyba-title {
     text-align: center;
     font-size: 7vw;
+  }
+  .dyba-title.subtitle {
+    font-size: 3vw;
   }
   .dyba-main-heading-row1-image {
     width: 70px;
