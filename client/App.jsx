@@ -19,14 +19,14 @@ $(function() {
   }
 
   // Fancy console message for developers
-  console.log('=================================');
-  console.log('=================================');
-  console.log('==== I am looking for a job =====');
-  console.log('=== as a Front-end Developer ====');
-  console.log('=================================');
-  console.log('======= Please contact me =======');
-  console.log('======= toryrahm at gmail =======');
-  console.log('============ Thanks! ============');
-  console.log('=================================');
-  console.log('=================================');
+  // console.log('=================================');
+  // console.log('=================================');
+  // console.log('==== I am looking for a job =====');
+  // console.log('=== as a Front-end Developer ====');
+  // console.log('=================================');
+  // console.log('======= Please contact me =======');
+  // console.log('======= toryrahm at gmail =======');
+  // console.log('============ Thanks! ============');
+  // console.log('=================================');
+  // console.log('=================================');
 });
