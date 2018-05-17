@@ -2,16 +2,16 @@
   --heading: #97a88e;
 }
 @font-face {
-    font-family: nexa_hand;
-    src: url(/css/NexaRustHand.ttf);
+  font-family: nexa_hand;
+  src: url(/css/NexaRustHand.ttf);
 }
 @font-face {
-    font-family: nexa;
-    src: url(/css/NexaRustSlab-1.ttf);
+  font-family: nexa;
+  src: url(/css/NexaRustSlab-1.ttf);
 }
 @font-face {
-    font-family: nexa_shadow;
-    src: url(/css/NexaRustSlab-Shadow1.ttf);
+  font-family: nexa_shadow;
+  src: url(/css/NexaRustSlab-Shadow1.ttf);
 }
 .dyba-body {
   margin: 0;
@@ -278,15 +278,13 @@
   font-family: 'Happy Monkey', serif;
   color: black;
 }
-.camp-signup {
+.signup {
   display: block;
   font-size: 24px;
   margin: 20px 0;
   text-align: center;
 }
 .dyba-main-content .camp-info {
-  // display: block;
-  // font-size: 24px;
   margin: 20px 0;
   text-align: center;
 }
@@ -301,7 +299,7 @@
 .dyba-section-title {
   text-decoration: underline;
 }
-.dyba-main-content h2 {
+.dyba-main-content h2, h4 {
   display: block;
   text-align: center;
 }
@@ -329,6 +327,20 @@ ul {
   width: 800px;
   margin: 0 auto;
   padding-bottom: 50px;
+}
+.dyba-main-content.full-container {
+  width: 100%;
+  padding: 0 10% 50px 10%;
+}
+.dhs-coaches.col-sm-9 {
+  padding-left: 10px;
+}
+.dhs-coaches p {
+  font-size: 17px;
+  line-height: 24px;
+}
+#mc_embed_signup .mc-field-group.input-group input {
+  margin-right: 4px;
 }
 .dyba-footer {
   position: relative;

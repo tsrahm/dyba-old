@@ -311,7 +311,7 @@
   color: black;
 }
 
-.camp-signup {
+.signup {
   display: block;
   font-size: 24px;
   margin: 20px 0;
@@ -336,7 +336,7 @@
   text-decoration: underline;
 }
 
-.dyba-main-content h2 {
+.dyba-main-content h2, h4 {
   display: block;
   text-align: center;
 }
@@ -371,6 +371,24 @@ ul {
   width: 800px;
   margin: 0 auto;
   padding-bottom: 50px;
+}
+
+.dyba-main-content.full-container {
+  width: 100%;
+  padding: 0 10% 50px 10%;
+}
+
+.dhs-coaches.col-sm-9 {
+  padding-left: 10px;
+}
+
+.dhs-coaches p {
+  font-size: 17px;
+  line-height: 24px;
+}
+
+#mc_embed_signup .mc-field-group.input-group input {
+  margin-right: 4px;
 }
 
 .dyba-footer {
