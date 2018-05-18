@@ -1,9 +1,9 @@
 {
-  "name": "davincijs-starter",
+  "name": "DYBA",
   "version": "0.0.1",
   "license": "MIT",
-  "author": "bishopz <eduatx@gmail.com>",
-  "description": "boilerplate for web animators",
+  "author": "Tory Rahm <toryrahm@gmail.com>",
+  "description": "DYBA",
   "repository": "https://github.com/bishopZ/kabuki-motion",
   "keywords": [
     "heroku",
@@ -20,10 +20,10 @@
     "animation",
     "web-animation"
   ],
-  "main": "server/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=development node server/app.js",
-    "production": "NODE_ENV=production node server/app.js",
+    "start": "NODE_ENV=development node app.js",
+    "production": "NODE_ENV=production node app.js",
     "build": "NODE_ENV=development webpack --progress --colors --config server/webpack.config.js",
     "production-build": "NODE_ENV=production webpack --progress --colors --config server/webpack.config.js",
     "watch": "webpack --watch --progress --config server/webpack.config.js"
