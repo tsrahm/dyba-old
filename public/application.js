@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -87,12 +87,12 @@
 	  // console.log('=================================');
 	});
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * jQuery JavaScript Library v2.2.3
+	 * jQuery JavaScript Library v2.2.4
 	 * http://jquery.com/
 	 *
 	 * Includes Sizzle.js
@@ -102,7 +102,7 @@
 	 * Released under the MIT license
 	 * http://jquery.org/license
 	 *
-	 * Date: 2016-04-05T19:26Z
+	 * Date: 2016-05-20T17:23Z
 	 */
 	
 	(function( global, factory ) {
@@ -158,7 +158,7 @@
 	
 	
 	var
-		version = "2.2.3",
+		version = "2.2.4",
 	
 		// Define a local copy of jQuery
 		jQuery = function( selector, context ) {
@@ -5099,13 +5099,14 @@
 		isDefaultPrevented: returnFalse,
 		isPropagationStopped: returnFalse,
 		isImmediatePropagationStopped: returnFalse,
+		isSimulated: false,
 	
 		preventDefault: function() {
 			var e = this.originalEvent;
 	
 			this.isDefaultPrevented = returnTrue;
 	
-			if ( e ) {
+			if ( e && !this.isSimulated ) {
 				e.preventDefault();
 			}
 		},
@@ -5114,7 +5115,7 @@
 	
 			this.isPropagationStopped = returnTrue;
 	
-			if ( e ) {
+			if ( e && !this.isSimulated ) {
 				e.stopPropagation();
 			}
 		},
@@ -5123,7 +5124,7 @@
 	
 			this.isImmediatePropagationStopped = returnTrue;
 	
-			if ( e ) {
+			if ( e && !this.isSimulated ) {
 				e.stopImmediatePropagation();
 			}
 	
@@ -6053,19 +6054,6 @@
 			val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
 			styles = getStyles( elem ),
 			isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
-	
-		// Support: IE11 only
-		// In IE 11 fullscreen elements inside of an iframe have
-		// 100x too small dimensions (gh-1764).
-		if ( document.msFullscreenElement && window.top !== window ) {
-	
-			// Support: IE11 only
-			// Running getBoundingClientRect on a disconnected node
-			// in IE throws an error.
-			if ( elem.getClientRects().length ) {
-				val = Math.round( elem.getBoundingClientRect()[ name ] * 100 );
-			}
-		}
 	
 		// Some non-html elements return undefined for offsetWidth, so check for null/undefined
 		// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
@@ -7957,6 +7945,7 @@
 		},
 	
 		// Piggyback on a donor event to simulate a different one
+		// Used only for `focus(in | out)` events
 		simulate: function( type, elem, event ) {
 			var e = jQuery.extend(
 				new jQuery.Event(),
@@ -7964,27 +7953,10 @@
 				{
 					type: type,
 					isSimulated: true
-	
-					// Previously, `originalEvent: {}` was set here, so stopPropagation call
-					// would not be triggered on donor event, since in our own
-					// jQuery.event.stopPropagation function we had a check for existence of
-					// originalEvent.stopPropagation method, so, consequently it would be a noop.
-					//
-					// But now, this "simulate" function is used only for events
-					// for which stopPropagation() is noop, so there is no need for that anymore.
-					//
-					// For the 1.x branch though, guard for "click" and "submit"
-					// events is still used, but was moved to jQuery.event.stopPropagation function
-					// because `originalEvent` should point to the original event for the constancy
-					// with other events and for more focused logic
 				}
 			);
 	
 			jQuery.event.trigger( e, null, elem );
-	
-			if ( e.isDefaultPrevented() ) {
-				event.preventDefault();
-			}
 		}
 	
 	} );
@@ -9935,19 +9907,19 @@
 	}));
 
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"dyba-body":"dyba-body","dyba-header":"dyba-header","dyba-background":"dyba-background","dyba-title-bar":"dyba-title-bar","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo":"dyba-nav-logo","dyba-title-container":"dyba-title-container","dyba-title":"dyba-title","subtitle":"subtitle","dyba-nav-bar":"dyba-nav-bar","dyba-nav-container":"dyba-nav-container","sticky":"sticky","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-link":"dyba-nav-link","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-nav-dropdown-container":"dyba-nav-dropdown-container","dyba-nav-dropdown-header":"dyba-nav-dropdown-header","dyba-nav-dropdown-menu":"dyba-nav-dropdown-menu","dyba-nav-container-sm":"dyba-nav-container-sm","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-main":"dyba-main","dyba-main-heading":"dyba-main-heading","dyba-main-heading-row1":"dyba-main-heading-row1","dyba-main-heading-row1-border":"dyba-main-heading-row1-border","dyba-main-heading-row1-image":"dyba-main-heading-row1-image","dyba-main-heading-row1-image-file-home":"dyba-main-heading-row1-image-file-home","show-jag":"show-jag","dyba-main-heading-row1-image-file":"dyba-main-heading-row1-image-file","dyba-main-heading-row2":"dyba-main-heading-row2","dyba-main-heading-row3":"dyba-main-heading-row3","dyba-main-content":"dyba-main-content","signup":"signup","camp-info":"camp-info","dyba-section-title":"dyba-section-title","league-info":"league-info","dyba-rosters":"dyba-rosters","dyba-calendar-container":"dyba-calendar-container","full-container":"full-container","dhs-coaches":"dhs-coaches","col-sm-9":"col-sm-9","mc_embed_signup":"mc_embed_signup","mc-field-group":"mc-field-group","input-group":"input-group","dyba-footer":"dyba-footer","dyba-footer-credits":"dyba-footer-credits","dyba-footer-credits-popup":"dyba-footer-credits-popup","dyba-footer-middle":"dyba-footer-middle","dyba-footer-created":"dyba-footer-created","dyba-footer-copyright":"dyba-footer-copyright","dyba-footer-contact":"dyba-footer-contact","dyba-btn-container":"dyba-btn-container","dyba-link-button":"dyba-link-button","btn":"btn","inline":"inline","dyba-btn-header":"dyba-btn-header","dyba-schedule":"dyba-schedule","col-xs-12":"col-xs-12","col-sm-7":"col-sm-7","col-sm-5":"col-sm-5"};
 
-/***/ },
+/***/ }),
 /* 3 */,
 /* 4 */,
 /* 5 */,
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -10081,21 +10053,21 @@
 	
 	module.exports = app;
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "<div class=\"dyba-background\">\n  <div class=\"dyba-title-bar row\">\n    <div class=\"col-xs-1\"></div>\n    <a href=\"/\" class=\"dyba-logo-container hidden-xs col-sm-2\">\n      <span class=\"home-hidden\">Home</span>\n      <img src=\"/images/Jags-shield-logo-white-text.png\" class=\"dyba-nav-logo\">\n    </a>\n    <div class=\"dyba-title-container col-xs-10 col-sm-8\">\n      <span class=\"dyba-title\">D'EVELYN YOUTH BASKETBALL</span>\n    </div>\n    <div class=\"col-xs-1\"></div>\n  </div>\n\n  <nav class=\"dyba-nav-bar row\">\n    <!-- Medium and large screen nav bar -->\n    <ul class=\"dyba-nav-container dyba-nav-container-md hidden-xs hidden-sm col-md-12\">\n      <li class=\"dyba-nav-link-container\">\n        <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/register\">REGISTRATION</a>\n      </li>\n      <li class=\"dyba-nav-item roar\">\n        <a href=\"#\">\n          <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n        </a>\n      </li>\n      <li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">TEAM INFO</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"/team-rosters\">Team Rosters</a></li>\n          <li><a href=\"/team-placement\">Team Placement</a></li>\n          <li><a href=\"/team-placement-faq\">Team Placement FAQ</a></li>\n          <li><a href=\"/practice-schedule\">DHS Practice Schedule</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">LEAGUE INFO</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"/k-1-info\">K thru 1st League Info</a></li>\n          <li><a href=\"/2-3-info\">2nd thru 3rd League Info</a></li>\n          <li><a href=\"/4-info\">4th League Info</a></li>\n          <li><a href=\"/5-8-info\">5th thru 8th League Info</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li><li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">PROGRAMS</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"/summer-camp\">2018 Summer Camps</a></li>\n          <!-- <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li> -->\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">COACHES</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"/dhs-coaches\">DHS Coaching Staff</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dyba-nav-link-container\">\n        <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/email-list\">EMAIL LIST</a>\n      </li>\n    </ul>\n\n    <!-- Small screen nav bar -->\n    <ul class=\"dyba-nav-container dyba-nav-container-sm hidden-xs col-sm-12 hidden-md hidden-lg\">\n      <li class=\"dyba-nav-link-container\">\n        <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/register\">REGISTRATION</a>\n      </li>\n      <li class=\"dyba-nav-item roar\">\n        <a href=\"#\">\n          <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n        </a>\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">TEAM INFO</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM1\">\n          <li><a href=\"/team-rosters\">Team Rosters</a></li>\n          <li><a href=\"/team-placement\">Team Placement</a></li>\n          <li><a href=\"/team-placement-faq\">Team Placement FAQ</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">LEAGUE INFO</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM1\">\n          <li><a href=\"/k-1-info\">K thru 1st League Info</a></li>\n          <li><a href=\"/2-3-info\">2nd thru 3rd League Info</a></li>\n          <li><a href=\"/4-info\">4th League Info</a></li>\n          <li><a href=\"/5-8-info\">5th thru 8th League Info</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">PROGRAMS</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM2\">\n          <li><a href=\"/summer-camp\">2018 Summer Camps</a></li>\n          <!-- <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li> -->\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM4\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">COACHES</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM4\">\n          <li><a href=\"/dhs-coaches\">DHS Coaching Staff</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dyba-nav-link-container\">\n        <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/email-list\">EMAIL LIST</a>\n      </li>\n    </ul>\n\n    <!-- Extra-small screen nav bar -->\n    <div class=\"row xs-row hidden-sm hidden-md hidden-lg\">\n      <div class=\"dropdown dyba-xs-nav-dropdown\">\n        <button class=\"btn btn-default dropdown-toggle dyba-xs-nav-button\" type=\"button\" id=\"dropdownMenuXS\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n          Menu\n          <span class=\"caret\"></span>\n        </button>\n        <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuXS\">\n          <li><a href=\"index\">HOME</a></li>\n          <li><a href=\"/register\">REGISTRATION</a></li>\n          <li><a href=\"/team-rosters\">TEAM ROSTERS</a></li>\n          <li><a href=\"/team-placement\">TEAM PLACEMENT</a></li>\n          <li><a href=\"/team-placement-faq\">TEAM PLACEMENT FAQ</a></li>\n          <li><a href=\"/k-1-info\">K THRU 1ST LEAGUE INFO</a></li>\n          <li><a href=\"/2-3-info\">2ND THRU 3RD LEAGUE INFO</a></li>\n          <li><a href=\"/4-info\">4TH LEAGUE INFO</a></li>\n          <li><a href=\"/5-8-info\">5TH THRU 8TH LEAGUE INFO</a></li>\n          <li><a href=\"/summer-camp\">2018 SUMMER CAMPS</a></li>\n          <li><a href=\"/dhs-coaches\">DHS COACHING STAFF</a></li>\n          <li><a href=\"/email-list\">EMAIL LIST</a></li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</div>\n";
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"dyba-footer-credits hidden-xs hidden-sm col-md-4\">\n  <p>Credits</p>\n  <div class=\"dyba-footer-credits-popup\">Paw icon made by <a href=\"http://www.freepik.com\" title=\"Freepik\">Freepik</a>, from <a href=\"http://www.flaticon.com\" title=\"Flaticon\">www.flaticon.com</a>, is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>\n</div>\n<div class=\"dyba-footer-credits col-xs-12 hidden-md hidden-lg\">\n  <p>Credits</p>\n  <div class=\"dyba-footer-credits-popup\">Paw icon made by <a href=\"http://www.freepik.com\" title=\"Freepik\">Freepik</a>, from <a href=\"http://www.flaticon.com\" title=\"Flaticon\">www.flaticon.com</a>, is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>\n</div>\n<div class=\"dyba-footer-middle col-xs-12 col-md-4\">\n  <div class=\"dyba-footer-created\">\n    <a href=\"https://tory-rahm.herokuapp.com/\">Created by Tory Rahm</a>\n  </div>\n  <div class=\"dyba-footer-copyright\">\n    <p>Copyright &copy; 2016. All rights reserved.</p>\n  </div>\n</div>\n<div class=\"dyba-footer-contact col-xs-12 col-md-4\">\n  <p>Contact DYBA: director@develynyouthbasketball.org</p>\n</div>\n";
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// This file is autogenerated via the `commonjs` Grunt task. You can require() this file in a CommonJS environment.
 	__webpack_require__(10)
@@ -10111,9 +10083,9 @@
 	__webpack_require__(20)
 	__webpack_require__(21)
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: transition.js v3.3.6
@@ -10176,9 +10148,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: alert.js v3.3.6
@@ -10276,9 +10248,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: button.js v3.3.6
@@ -10402,9 +10374,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: carousel.js v3.3.6
@@ -10645,9 +10617,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: collapse.js v3.3.6
@@ -10862,9 +10834,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: dropdown.js v3.3.6
@@ -11033,9 +11005,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: modal.js v3.3.6
@@ -11376,9 +11348,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: tooltip.js v3.3.6
@@ -11896,9 +11868,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: popover.js v3.3.6
@@ -12010,9 +11982,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: scrollspy.js v3.3.6
@@ -12188,9 +12160,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: tab.js v3.3.6
@@ -12349,9 +12321,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* ========================================================================
 	 * Bootstrap: affix.js v3.3.6
@@ -12517,9 +12489,9 @@
 	}(jQuery);
 
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	* hoverFlow - A Solution to Animation Queue Buildup in jQuery
@@ -12556,6 +12528,6 @@
 	  };
 	})(jQuery);
 
-/***/ }
+/***/ })
 /******/ ]);
 //# sourceMappingURL=application.js.map
